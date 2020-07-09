@@ -8,7 +8,7 @@ Design and implement the following infrastructure on a cloud provider (GCP or AW
 
 Solution
 
-All infrastructure deliverable output files are located in the outputs directory:
+All infrastructure deliverable output files are located in the [outputs](https://github.com/shreeni123/thinkresearch-project/tree/master/output) directory:
 VPC
 - Public Subnets
 - Route tables
