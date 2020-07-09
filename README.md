@@ -28,8 +28,8 @@ Installations:
 5. AWS-IAM-Authenticator
 
 Commands:
-$`terraform init`
-$`terraform plan`
+`terraform init`
+`terraform plan`
 `terraform apply`
 `terraform state list`
 `terraform output kubeconfig > ~/.kube/config`
