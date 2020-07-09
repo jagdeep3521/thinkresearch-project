@@ -1,0 +1,24 @@
+NAMESPACE     NAME                          READY   STATUS    RESTARTS   AGE     IP           NODE                                       NOMINATED NODE   READINESS GATES
+default       pod/nginx-574b87c764-7z4n2    1/1     Running   0          3m17s   10.0.0.204   ip-10-0-0-243.us-east-2.compute.internal   <none>           <none>
+default       pod/nginx-574b87c764-9dzhb    1/1     Running   0          3m17s   10.0.0.72    ip-10-0-0-243.us-east-2.compute.internal   <none>           <none>
+kube-system   pod/aws-node-hd2n2            1/1     Running   0          4h36m   10.0.0.243   ip-10-0-0-243.us-east-2.compute.internal   <none>           <none>
+kube-system   pod/coredns-bd44f767b-b678g   1/1     Running   0          50m     10.0.0.152   ip-10-0-0-243.us-east-2.compute.internal   <none>           <none>
+kube-system   pod/coredns-bd44f767b-pss5w   1/1     Running   0          50m     10.0.0.156   ip-10-0-0-243.us-east-2.compute.internal   <none>           <none>
+kube-system   pod/kube-proxy-k7fjb          1/1     Running   0          4h36m   10.0.0.243   ip-10-0-0-243.us-east-2.compute.internal   <none>           <none>
+
+NAMESPACE     NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)         AGE     SELECTOR
+default       service/kubernetes   ClusterIP      172.20.0.1      <none>                                                                    443/TCP         4h39m   <none>
+default       service/nginx        LoadBalancer   172.20.42.210   a1b22cf749ac84c3ba882c26013e9ee8-1390245967.us-east-2.elb.amazonaws.com   80:31089/TCP    3m17s   app=nginx
+kube-system   service/kube-dns     ClusterIP      172.20.0.10     <none>                                                                    53/UDP,53/TCP   4h39m   k8s-app=kube-dns
+
+NAMESPACE     NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE     CONTAINERS   IMAGES                                                                SELECTOR
+kube-system   daemonset.apps/aws-node     1         1         1       1            1           <none>          4h39m   aws-node     602401143452.dkr.ecr.us-east-2.amazonaws.com/amazon-k8s-cni:v1.6.3    k8s-app=aws-node
+kube-system   daemonset.apps/kube-proxy   1         1         1       1            1           <none>          4h39m   kube-proxy   602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/kube-proxy:v1.16.8   k8s-app=kube-proxy
+
+NAMESPACE     NAME                      READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                            SELECTOR
+default       deployment.apps/nginx     2/2     2            2           3m17s   nginx        nginx:1.14.2                                                      app=nginx
+kube-system   deployment.apps/coredns   2/2     2            2           4h39m   coredns      602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/coredns:v1.6.6   eks.amazonaws.com/component=coredns,k8s-app=kube-dns
+
+NAMESPACE     NAME                                DESIRED   CURRENT   READY   AGE     CONTAINERS   IMAGES                                                            SELECTOR
+default       replicaset.apps/nginx-574b87c764    2         2         2       3m17s   nginx        nginx:1.14.2                                                      app=nginx,pod-template-hash=574b87c764
+kube-system   replicaset.apps/coredns-bd44f767b   2         2         2       4h39m   coredns      602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/coredns:v1.6.6   eks.amazonaws.com/component=coredns,k8s-app=kube-dns,pod-template-hash=bd44f767b

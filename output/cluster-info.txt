@@ -1,0 +1,51 @@
+{
+    "cluster": {
+        "name": "terraform-eks-demo",
+        "arn": "arn:aws:eks:us-east-2:692963223244:cluster/terraform-eks-demo",
+        "createdAt": "2020-07-08T20:25:24.541000-04:00",
+        "version": "1.16",
+        "endpoint": "https://1AB511907EA416F2D233B2A99BB5A3A6.yl4.us-east-2.eks.amazonaws.com",
+        "roleArn": "arn:aws:iam::692963223244:role/terraform-eks-demo-cluster",
+        "resourcesVpcConfig": {
+            "subnetIds": [
+                "subnet-0e66160b30840dd99",
+                "subnet-0199256b8f36f6003"
+            ],
+            "securityGroupIds": [
+                "sg-07bc3b05150ea02eb"
+            ],
+            "clusterSecurityGroupId": "sg-06d386e14d9af41b5",
+            "vpcId": "vpc-000fc98557aa24308",
+            "endpointPublicAccess": true,
+            "endpointPrivateAccess": false,
+            "publicAccessCidrs": [
+                "0.0.0.0/0"
+            ]
+        },
+        "logging": {
+            "clusterLogging": [
+                {
+                    "types": [
+                        "api",
+                        "audit",
+                        "authenticator",
+                        "controllerManager",
+                        "scheduler"
+                    ],
+                    "enabled": false
+                }
+            ]
+        },
+        "identity": {
+            "oidc": {
+                "issuer": "https://oidc.eks.us-east-2.amazonaws.com/id/1AB511907EA416F2D233B2A99BB5A3A6"
+            }
+        },
+        "status": "ACTIVE",
+        "certificateAuthority": {
+            "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01EY3dPVEF3TXpJeU1Wb1hEVE13TURjd056QXdNekl5TVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS2NvCk9wZC9QbFFldHdqTHNPYnppQzVGUGpjMmJMeFJENkdFMlM4ZFdmSVhsOG5YQVdrRkZmMVlKN1RVdmpSWURkck4KN0xPdmlCZml4Ui8wZ1ViVkwwQVRJUkQ2dUxxZWNyZUhRSTZrWEUreGVDZVoyZ2FibDRMZFl3WEtGeU5OUERZVApVOVA4Z3pWVU1UTlNEOThBOFBNOVFtaC9KUW5QeHlOOElRTjdIbnREeXJsOWlLWmQwcXBBcXpRTDBJYlZjSUVyCkp6YmZYSFVmVWZsSkJicXZOdVl4N252aFZnVlJORWFTRENjaTFKUVBSYkNLSkhNSWNYSll5RkpFWWhNYVNnaUwKaVVxWjdaYUN3SHBtL3l6YkRDMnFmMkc2YTFZL1htVEk3KzJjWmx5Q0d3Y0htS1k2VGt5Y1dWL2N6WlVNblhYcgplU3M5QjdtOHY4SG1zZDBBS0E4Q0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFEWW9GTjVySVhUQTdmZU5Mb2dPRms1TFN6MDUKTWM1RHJreTRHYTJjZmRFTEowU2YwcE5ESHUyb1VmbHBidEg3RGtrNVFTeXhuZ0xxTWx3NXpFMGN1TGE1YUR1MgpGd1pJUzMvTEtMK1I3dmF0M0tkZUpPT01EY20zY21ZTGsrNzd3SGg3M2ppZmxiRElTOGFVZGZTVC8vb0tLRjF1CkhrWlV0eXh0RC94ZzU5emF1K2hHVXh5QnJOWXV3NUJTNHBZRzNmUDBaaS9Sc3hpbjFJaEo4QzkxWU9qV2hlRXYKN2hjZ3cwL2RmeVlJbzVuUEw5L3pRVGJuNkVoSjVlY3hCM3pFRHRUUjVWWlJiZTRWT005VE9XSGpYOG1INVZUQwowUHN1aEdHV0JlMWZuMkdMRkM5ZndROHUwZXZ3bVJSRzRHcFlQYnN0ZVlEamNqSnpFNVFSdkFVK2tOTT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+        },
+        "platformVersion": "eks.2",
+        "tags": {}
+    }
+}

@@ -1,0 +1,41 @@
+config_map_aws_auth = 
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::692963223244:role/terraform-eks-demo-node
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
+
+kubeconfig = 
+
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://1AB511907EA416F2D233B2A99BB5A3A6.yl4.us-east-2.eks.amazonaws.com
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01EY3dPVEF3TXpJeU1Wb1hEVE13TURjd056QXdNekl5TVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS2NvCk9wZC9QbFFldHdqTHNPYnppQzVGUGpjMmJMeFJENkdFMlM4ZFdmSVhsOG5YQVdrRkZmMVlKN1RVdmpSWURkck4KN0xPdmlCZml4Ui8wZ1ViVkwwQVRJUkQ2dUxxZWNyZUhRSTZrWEUreGVDZVoyZ2FibDRMZFl3WEtGeU5OUERZVApVOVA4Z3pWVU1UTlNEOThBOFBNOVFtaC9KUW5QeHlOOElRTjdIbnREeXJsOWlLWmQwcXBBcXpRTDBJYlZjSUVyCkp6YmZYSFVmVWZsSkJicXZOdVl4N252aFZnVlJORWFTRENjaTFKUVBSYkNLSkhNSWNYSll5RkpFWWhNYVNnaUwKaVVxWjdaYUN3SHBtL3l6YkRDMnFmMkc2YTFZL1htVEk3KzJjWmx5Q0d3Y0htS1k2VGt5Y1dWL2N6WlVNblhYcgplU3M5QjdtOHY4SG1zZDBBS0E4Q0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFEWW9GTjVySVhUQTdmZU5Mb2dPRms1TFN6MDUKTWM1RHJreTRHYTJjZmRFTEowU2YwcE5ESHUyb1VmbHBidEg3RGtrNVFTeXhuZ0xxTWx3NXpFMGN1TGE1YUR1MgpGd1pJUzMvTEtMK1I3dmF0M0tkZUpPT01EY20zY21ZTGsrNzd3SGg3M2ppZmxiRElTOGFVZGZTVC8vb0tLRjF1CkhrWlV0eXh0RC94ZzU5emF1K2hHVXh5QnJOWXV3NUJTNHBZRzNmUDBaaS9Sc3hpbjFJaEo4QzkxWU9qV2hlRXYKN2hjZ3cwL2RmeVlJbzVuUEw5L3pRVGJuNkVoSjVlY3hCM3pFRHRUUjVWWlJiZTRWT005VE9XSGpYOG1INVZUQwowUHN1aEdHV0JlMWZuMkdMRkM5ZndROHUwZXZ3bVJSRzRHcFlQYnN0ZVlEamNqSnpFNVFSdkFVK2tOTT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: aws
+  name: aws
+current-context: aws
+kind: Config
+preferences: {}
+users:
+- name: aws
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      command: aws-iam-authenticator
+      args:
+        - "token"
+        - "-i"
+        - "terraform-eks-demo"
