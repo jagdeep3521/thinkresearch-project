@@ -44,7 +44,7 @@ The deliverable for this exercise will be the YAML files for the Kubernetes depl
 
 Solution
 
-nginx.yaml --> Contains the deployment and service (exposing the deployment to a LoadBalancer)
+[nginx.yaml](https://github.com/shreeni123/thinkresearch-project/blob/master/nginx.yaml) --> Contains the deployment and service (exposing the deployment to a LoadBalancer)
 
 Commands:
 `kubectl apply -f nginx.yaml`
